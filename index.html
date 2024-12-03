@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traductor Interactivo</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>🌍 Traductor Interactivo Inglés-Español</h1>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Traducir Palabras</h2>
+      <div class="form-group">
+        <input type="text" id="inputWord" placeholder="Escribe una palabra">
+      </div>
+      <div class="form-group">
+        <label><input type="radio" name="language" value="enToEs" checked> Inglés a Español</label>
+        <label><input type="radio" name="language" value="esToEn"> Español a Inglés</label>
+      </div>
+      <button class="btn-primary" id="translateBtn">Traducir</button>
+      <p id="translationResult" class="result"></p>
+    </section>
+
+    <section class="card">
+      <h2>Diccionario</h2>
+      <div class="toolbar">
+        <button class="btn-secondary" id="sortByEnglish">Ordenar por Inglés</button>
+        <button class="btn-secondary" id="sortBySpanish">Ordenar por Español</button>
+      </div>
+      <div class="categories">
+        <label><input type="radio" name="category" value="all" checked> Todas</label>
+        <label><input type="radio" name="category" value="animals"> Animales</label>
+        <label><input type="radio" name="category" value="fruits"> Frutas</label>
+        <label><input type="radio" name="category" value="colors"> Colores</label>
+        <label><input type="radio" name="category" value="physical_descriptions"> Descripciones Físicas</label>
+        <label><input type="radio" name="category" value="skills"> Habilidades</label>
+        <label><input type="radio" name="category" value="verbs"> Verbos</label>
+      </div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Inglés</th>
+            <th>Español</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody id="dictionaryTable"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Añadir Palabra</h2>
+      <form id="addWordForm" class="form">
+        <div class="form-group">
+          <input type="text" id="newEnglishWord" placeholder="Palabra en inglés" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="newSpanishWord" placeholder="Traducción al español" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="exampleSentence" placeholder="Ejemplo de uso" required>
+        </div>
+        <div class="form-group">
+          <select id="categorySelect" required>
+            <option value="" disabled selected>Selecciona una categoría</option>
+            <option value="animals">Animales</option>
+            <option value="fruits">Frutas</option>
+            <option value="colors">Colores</option>
+            <option value="physical_descriptions">Descripciones Físicas</option>
+            <option value="skills">Habilidades</option>
+            <option value="verbs">Verbos</option>
+          </select>
+        </div>
+        <button class="btn-primary" type="submit">Añadir Palabra</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2024 Traductor Interactivo Hecho por: Diego Motato</p>
+  </footer>
+
+  <script src="/scripts/dictionary.js"></script>
+</body>
+
+</html>
